@@ -12,3 +12,4 @@ Post the model file with name and version and it will itself register the model
 
 ### Development
 Pure python and based on FastAPI
+

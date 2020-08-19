@@ -2,7 +2,6 @@
 
 A very simple pytorch model server.
 
-
 ## Features
 
 * Register models

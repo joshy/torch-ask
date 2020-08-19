@@ -4,6 +4,8 @@ from pathlib import Path
 from shutil import copyfile, copyfileobj
 from fastapi import FastAPI, File, Form, UploadFile
 
+from model import load
+
 app = FastAPI()
 version = "0.0.1"
 
@@ -11,9 +13,11 @@ MODEL_STORE = "model_store"
 
 @app.on_event("startup")
 async def startup_event():
+    print("yeah startup event")
     if not Path(MODEL_STORE).is_dir():
-        os.makedirs(MODEL_STORE)
-
+        os.makedirs(MODEL_STORE)  
+    model = load()
+    print(model)
 
 @app.get("/")
 async def root():

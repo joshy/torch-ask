@@ -1,10 +1,13 @@
 # Torch Ask
 
-A very simple pytorch model server.
+A very simple pytorch model server with pytorch1.6 and detectron2. 
+
+## Installation
+Install from requirements.txt but also install detectron2 (see instructions here: https://detectron2.readthedocs.io/tutorials/install.html)
 
 ## Features
 
-* Register models
+* Register models (not yet)
 * Run inference on uploaded models
 
 ### Register model

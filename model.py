@@ -17,11 +17,11 @@ from detectron2.utils.visualizer import Visualizer
 from detectron2.data import MetadataCatalog
 
 
-def load():
+def load_predictor(model_path):
     print("loading model")
     cfg = get_cfg()
     cfg.merge_from_file(model_zoo.get_config_file("COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml"))
     cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml")  # Let training initialize from model zoo
-    cfg.MODEL.WEIGHTS = os.path.join("model_store/detection-model-created-on-2020-07-24.pth")
+    cfg.MODEL.WEIGHTS = model_path
     predictor = DefaultPredictor(cfg)
     return predictor
